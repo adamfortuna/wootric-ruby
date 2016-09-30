@@ -29,8 +29,7 @@ class Wootric::Client
         req.params['email'] = options[:email] unless options[:email].nil?
         req.params['last_surveyed'] = options[:last_surveyed] unless options[:last_surveyed].nil?
         req.params['external_created_at'] = options[:external_created_at] unless options[:external_created_at].nil?
-        req.params['properties[company]'] = options[:company] unless options[:company].nil?
-        req.params['properties[city]'] = options[:city] unless options[:city].nil?
+        req.params['properties'] = options[:properties] unless options[:properties].nil?
       end
       new_user_json = JSON.parse(edit_user.body)
       new_user_json
