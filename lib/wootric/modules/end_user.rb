@@ -28,6 +28,7 @@ class Wootric::Client
       edit_user = connection.put("end_users/#{user_id}") do |req|
         req.params['email'] = options[:email] unless options[:email].nil?
         req.params['last_surveyed'] = options[:last_surveyed] unless options[:last_surveyed].nil?
+        req.params['external_id'] = options[:external_id] unless options[:external_id].nil?
         req.params['external_created_at'] = options[:external_created_at] unless options[:external_created_at].nil?
         if options[:properties]
           options[:properties].each_pair do |key, value|
